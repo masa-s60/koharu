@@ -1,8 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const hamburger = document.querySelector('.js-hamburger');
+  const hamburgerMenu = document.querySelector('.c-hamburger');
+  const hamburgerNav = document.querySelector('.c-nav__header');
+  const overlay = document.querySelector('.c-overlay');
   
-  hamburger.addEventListener('click', () => {
-  const isOpen = hamburger.classList.toggle('is-open');
-  hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-});
+  hamburgerMenu.addEventListener('click', () => {
+    const isOpenHamburgerMenu = hamburgerMenu.classList.toggle('is-open');
+    hamburgerNav.classList.toggle('is-open');
+    overlay.classList.toggle('is-open');
+    hamburgerMenu.setAttribute('aria-expanded', isOpenHamburgerMenu ? 'true' : 'false');
+  });
 });
