@@ -1,0 +1,80 @@
+/*-------------------------------------------
+TOP gridレイアウト
+-------------------------------------------*/
+@use 'setting' as s;
+/* ここから記述します。 */
+
+.p-products::before {
+  content: "UTSUWAYA KOHARU";
+  position: absolute;
+  top: 30%;
+  left: 0%;
+  transform: rotate(-90deg) translate(-50%, -50%);
+  transform-origin: left bottom;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 1.2;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.p-products::after {
+  content: "";
+  position: absolute;
+  top: 55%;
+  left: -25px;
+  transform: translate(-50%, -50%);
+  transform-origin: left bottom;
+  width: 1px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.p-products {
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5rem 2rem;
+  grid-auto-rows: 37%;
+  margin-bottom: 3%;
+}
+
+.p-products__item--vertical {
+  grid-row: span 2;
+  object-fit: cover;
+  object-position: 70% center;
+}
+
+.p-products__item {
+  color: white;
+}
+
+.p-products__link {
+  display: block;
+  height: 100%;
+}
+
+.p-products__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 2%;
+}
+
+.p-products__image--focus-upper {
+  object-fit: cover;
+  object-position: 100% center;
+}
+
+.p-products__more {
+  text-align: center;
+  margin: auto;
+}
+
+.p-products__more-link {
+  border: solid white 1px;
+  color: white;
+  margin: auto;
+  padding: 1% 5%;
+}
+
