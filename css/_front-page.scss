@@ -16,6 +16,10 @@ TOP gridレイアウト
   letter-spacing: 1.2;
   white-space: nowrap;
   pointer-events: none;
+
+  @include s.mq(tab) {
+    display: none;
+  }
 }
 
 .p-products::after {
@@ -28,25 +32,39 @@ TOP gridレイアウト
   width: 1px;
   height: 50px;
   background-color: rgba(255, 255, 255, 0.4);
+
+  @include s.mq(tab) {
+    display: none;
+  }
 }
 
 .p-products {
   display: grid;
-  position: relative;
   grid-template-columns: repeat(4, 1fr);
-  gap: 5rem 2rem;
-  grid-auto-rows: 37%;
-  margin-bottom: 3%;
-}
+  gap: 5.5rem 2rem;
+  position: relative;
+  margin-bottom: 150px;
 
-.p-products__item--vertical {
-  grid-row: span 2;
-  object-fit: cover;
-  object-position: 70% center;
+  @include s.mq(tab) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .p-products__item {
   color: white;
+  aspect-ratio: 1 / 1;
+}
+
+.p-products__item--vertical {
+  grid-row: span 2;
+  aspect-ratio: auto;
+  object-fit: cover;
+  object-position: 70% center;
+
+  @include s.mq(tab) {
+    grid-column: span 2;
+    object-fit: contain;
+  }
 }
 
 .p-products__link {
@@ -68,13 +86,11 @@ TOP gridレイアウト
 
 .p-products__more {
   text-align: center;
-  margin: auto;
+  margin-bottom: 120px;
 }
 
 .p-products__more-link {
   border: solid white 1px;
   color: white;
-  margin: auto;
-  padding: 1% 5%;
+  padding: 15px 80px;
 }
-

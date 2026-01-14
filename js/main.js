@@ -1,12 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
   const hamburgerMenu = document.querySelector('.c-hamburger');
-  const hamburgerNav = document.querySelector('.c-nav__header');
+  const nav = document.querySelector('.c-header__nav');
   const overlay = document.querySelector('.c-overlay');
   
-  hamburgerMenu.addEventListener('click', () => {
-    const isOpenHamburgerMenu = hamburgerMenu.classList.toggle('is-open');
-    hamburgerNav.classList.toggle('is-open');
-    overlay.classList.toggle('is-open');
-    hamburgerMenu.setAttribute('aria-expanded', isOpenHamburgerMenu ? 'true' : 'false');
-  });
+  const toggleMenu = () => {
+    const isOpen = hamburgerMenu.classList.toggle("is-open");
+    nav.classList.toggle("is-open", isOpen);
+    overlay.classList.toggle("is-open", isOpen);
+
+    hamburgerMenu.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    nav.setAttribute("aria-hidden", isOpen ? "false" : "true");
+    overlay.setAttribute("aria-hidden", isOpen ? "false" : "true");
+  }
+
+  hamburgerMenu.addEventListener('click', toggleMenu);
+  overlay.addEventListener("click", toggleMenu);
 });

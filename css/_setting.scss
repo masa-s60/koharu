@@ -8,7 +8,7 @@ $breakpoints: (
   'tab': 'screen and (max-width: 900px)',
 ) !default;
 
-@mixin mq($breakpoint: sp) {
+@mixin mq($breakpoint: tab) {
   @media #{map-get($breakpoints, $breakpoint)} {
     @content;
   }
@@ -21,10 +21,12 @@ $breakpoints: (
     margin: 32px auto;
     display: flex;
     align-items: center;
+
     @include mq(tab) {
-        font-size: 24px;
+      font-size: 24px;
     }
 }
+
 @mixin buttonStyle{
     width: 240px;
     height: 50px;
