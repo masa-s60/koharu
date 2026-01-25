@@ -8,14 +8,14 @@ companyページ / company.html
   height: 100%;
 }
 
-.p-company__info {
-  display: flex;
-  align-items: center;
+// .p-company__info {
+//   display: flex;
+//   align-items: center;
 
-  @include s.mq(tab) {
-    aspect-ratio: auto;
-  }
-}
+//   @include s.mq(tab) {
+//     aspect-ratio: auto;
+//   }
+// }
 
 .p-company__list {
   width: 100%;

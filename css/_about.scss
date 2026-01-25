@@ -3,16 +3,6 @@ aboutページ / about.html
 -------------------------------------------*/
 @use 'setting' as s;
 
-.p-about__concept {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  @include s.mq(tab) {
-    aspect-ratio: auto;
-  }
-}
-
 .p-about__subtitle {
   font-size: 28px;
   margin-bottom: 20px;
@@ -20,8 +10,4 @@ aboutページ / about.html
   @include s.mq(tab) {
     font-size: 22px;
   }
-}
-
-.p-about__text {
-  line-height: 2;
 }

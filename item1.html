@@ -1,33 +1,102 @@
 <!DOCTYPE html>
 <html lang="ja">
 	<head>
-		<!-- ウェブページの文字エンコーディングを指定するために使用されます。 -->
 		<meta charset="UTF-8" />
-		<!-- ウェブページのビューポート（表示領域）の設定を指定します。 -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<!-- ウェブページのタイトルに使用されます。 -->
-		<title>うつわ屋こはる</title>
-		<!-- ウェブページの簡潔な説明や概要を提供するために使用されます。 -->
-		<meta
-			name="description"
-			content="うつわ屋こはるは陶器専門のECサイトです。陶器の製造・販売を行っています。"
-		/>
-		<!-- モバイルブラウザが電話番号の検出やリンク化を行わないように設定しています。 -->
+		<title>item | うつわ屋こはる</title>
+		<meta name="description" content="うつわ屋こはるは陶器専門のECサイトです。陶器の製造・販売を行っています。"/>
 		<meta name="format-detection" content="telephone=no" />
-		<!-- ファビコンを設定しています。 -->
 		<link rel="shortcut icon" href="image/favicon.ico" />
-		<!-- reset.cssは、destyleを使用しています。 -->
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"
-		/>
-		<!-- スタイルシート（css）を呼び出しています -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"/>
 		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-…" crossorigin="anonymous" referrerpolicy="no-referrer">
 	</head>
-	<body class="body">
-  <!-- ここから記述します。 -->
 
-   <!-- JSを呼び出しています -->
-		<script src="js/menu.js"></script>
+	<body class="body">
+    <header class="c-header u-wrapper">
+      <div class="c-site-title"> 
+        <a href="./index.html" >
+          <img src="./image/logo-white.png" alt="うつわ屋こはる" >
+        </a>
+      </div>
+
+      <button class="c-hamburger" type="button" aria-expanded="false">
+    	  <span class="c-hamburger__bar"></span>
+      </button>
+
+      <nav class="c-header__nav" aria-hidden="true">
+        <div class="c-site-title">
+          <img src="./image/logo.png" alt="私たちのサービス紹介">
+        </div>
+        <ul class="c-header__nav-list">
+          <li class="c-header__nav-item"><a href="./index.html">ホーム</a></li>
+          <li class="c-header__nav-item"><a href="./products.html">商品一覧</a></li>
+          <li class="c-header__nav-item"><a href="./company.html">会社概要</a></li>
+          <li class="c-header__nav-item"><a href="./about.html">私たちについて</a></li>
+        </ul>
+      </nav>
+      <div class="c-overlay" aria-hidden="true"></div>
+    </header>
+
+    <main class="c-main u-wrapper p-item">
+      <div class="c-sprit p-about">
+        <div class="c-sprit__left p-about__img">
+					<img src="./image/item1.jpg" alt="益子焼オリジナルセット">
+        </div>
+        <div class="c-sprit__right c-content-panel">
+					<h1 class="c-item__title">益子焼オリジナルセット</h1>
+					<p  class="c-item__price">価格：9,800円 (税込み)</p>
+					<form class="c-add-to-cart" action="/cart/add" method="post">
+						<input type="hidden" name="product_id" value="item-001">
+						<div class="c-add-to-cart__row">
+							<label class="c-add-to-cart__label" for="quantity">数量</label>
+							<input
+								class="c-add-to-cart__quantity"
+								id="quantity"
+								name="quantity"
+								type="number"
+								min="1"
+								step="1"
+								value="1"
+								inputmode="numeric"
+								required
+								autofocus
+							>
+						</div>
+						<button class="c-add-to-cart__button" type="submit">
+							お買い物かごに入れる <i class="fa-solid fa-cart-shopping"></i>
+						</button>
+					</form>
+					<p class="c-text">
+						このマグカップは、地元で採れる質の高い粘土を使用し、一つ一つ手作業で丁寧に作られています。
+						シンプルながらも洗練されたフォルムは、持ちやすさと使いやすさを追求しました。<br><br>
+						手に馴染む持ち手部分は、長時間の使用でも疲れにくく、毎日のコーヒータイムやティータイムにおすすめです。
+					</p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="c-footer u-wrapper">
+      <div class="c-footer__container">
+        <div>
+          <div class="c-site-title c-site-title--footer"> 
+            <a href="./index.html" >
+              <img src="./image/logo.png" alt="うつわ屋こはる" >
+            </a>
+          </div>
+          <nav class="c-footer__nav">
+            <ul class="c-footer__nav-list">
+              <li class="c-footer__nav-item"><a href="./index.html">ホーム</a></li>
+              <li class="c-footer__nav-item"><a href="./products.html">商品一覧</a></li>
+              <li class="c-footer__nav-item"><a href="./company.html">会社概要</a></li>
+              <li class="c-footer__nav-item"><a href="./about.html">私たちについて</a></li>
+            </ul>
+          </nav>
+        </div>
+        <p class="c-footer__copyright">© うつわ屋こはる All Right Reserved</p>
+      </div>
+    </footer>
+
+		<script src="./js/main.js"></script>
 	</body>
 </html>

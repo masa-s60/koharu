@@ -171,6 +171,46 @@ main
   }
 }
 
+/*--------------- gridスタイル ------------------*/
+.c-products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5.5rem 2rem;
+  position: relative;
+  margin-bottom: 150px;
+}
+@media screen and (max-width: 900px) {
+  .c-products {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem 0.5rem;
+    font-size: 14px;
+    margin-bottom: 130px;
+  }
+}
+
+.c-products__item {
+  color: white;
+  aspect-ratio: 1/1;
+}
+
+.c-products__link {
+  display: block;
+  height: 100%;
+}
+
+.c-products__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 2%;
+}
+@media screen and (max-width: 900px) {
+  .c-products__image {
+    margin-bottom: 1%;
+  }
+}
+
+/*--------------- 2分割レイアウト ------------------*/
 .c-sprit {
   display: flex;
   gap: 45px;
@@ -187,6 +227,83 @@ main
 .c-sprit__right {
   flex: 1;
   aspect-ratio: 1/1;
+}
+
+.c-sprit__right {
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 900px) {
+  .c-sprit__right {
+    aspect-ratio: auto;
+  }
+}
+
+.c-content-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/*--------------- products item ------------------*/
+.c-item__title {
+  font-size: 38px;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 900px) {
+  .c-item__title {
+    font-size: 24px;
+  }
+}
+
+.c-item__price {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 900px) {
+  .c-item__price {
+    font-size: 20px;
+  }
+}
+
+.c-add-to-cart {
+  margin-bottom: 40px;
+}
+
+.c-add-to-cart__row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.c-add-to-cart__label {
+  font-size: 14px;
+  white-space: nowrap;
+  margin-bottom: 2px;
+}
+
+.c-add-to-cart__quantity {
+  width: 160px;
+  border: 1px solid #fff;
+  background-color: #fff;
+  color: #000;
+  font-size: 16px;
+  padding: 6px;
+}
+
+.c-add-to-cart__button {
+  padding: 14px 18px;
+  background-color: rgb(186, 0, 0);
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.c-text {
+  line-height: 2;
 }
 
 /*-------------------------------------------
@@ -275,24 +392,6 @@ TOP gridレイアウト
   }
 }
 
-.p-products {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 5.5rem 2rem;
-  position: relative;
-  margin-bottom: 150px;
-}
-@media screen and (max-width: 900px) {
-  .p-products {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-.p-products__item {
-  color: white;
-  aspect-ratio: 1/1;
-}
-
 .p-products__item--vertical {
   grid-row: span 2;
   aspect-ratio: auto;
@@ -307,18 +406,6 @@ TOP gridレイアウト
     -o-object-fit: contain;
        object-fit: contain;
   }
-}
-
-.p-products__link {
-  display: block;
-  height: 100%;
-}
-
-.p-products__image {
-  display: block;
-  width: 100%;
-  height: 100%;
-  margin-bottom: 2%;
 }
 
 .p-products__image--focus-upper {
@@ -342,17 +429,6 @@ TOP gridレイアウト
 /*-------------------------------------------
 aboutページ / about.html
 -------------------------------------------*/
-.p-about__concept {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-@media screen and (max-width: 900px) {
-  .p-about__concept {
-    aspect-ratio: auto;
-  }
-}
-
 .p-about__subtitle {
   font-size: 28px;
   margin-bottom: 20px;
@@ -363,26 +439,12 @@ aboutページ / about.html
   }
 }
 
-.p-about__text {
-  line-height: 2;
-}
-
 /*-------------------------------------------
 companyページ / company.html
 -------------------------------------------*/
 .c-sprit__left iframe {
   width: 100%;
   height: 100%;
-}
-
-.p-company__info {
-  display: flex;
-  align-items: center;
-}
-@media screen and (max-width: 900px) {
-  .p-company__info {
-    aspect-ratio: auto;
-  }
 }
 
 .p-company__list {
@@ -411,8 +473,21 @@ companyページ / company.html
 /*-------------------------------------------
 itemページ / item*.html
 -------------------------------------------*/
-/* ここから記述します。 */
+.p-item {
+  margin-top: 30px;
+}
+
 /*-------------------------------------------
 productsページ / products.html
 -------------------------------------------*/
-/* ここから記述します。 *//*# sourceMappingURL=style.css.map */
+/* ここから記述します。 */
+.p-products--popular {
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 180px;
+}
+@media screen and (max-width: 900px) {
+  .p-products--popular {
+    grid-template-columns: 1fr;
+    margin-bottom: 120px;
+  }
+}/*# sourceMappingURL=style.css.map */
