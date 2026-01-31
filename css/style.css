@@ -1,7 +1,4 @@
 @charset "UTF-8";
-/*-------------------------------------------
-共通クラス
--------------------------------------------*/
 body {
   font-family: "Hiragino Mincho Pro", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, HGS明朝E, メイリオ, Meiryo, serif;
   letter-spacing: 0.1em;
@@ -68,6 +65,7 @@ header
 
 .c-hamburger__bar {
   position: absolute;
+  top: 50%;
   width: 100%;
   height: 2px;
   background: #fff;
@@ -81,15 +79,19 @@ header
   width: 100%;
   height: 2px;
   background: #fff;
-  transition: 5s;
+  transition: 0.5s;
 }
 
 .c-hamburger__bar::before {
   top: -10px;
+  left: 0;
+  transform-origin: right center;
 }
 
 .c-hamburger__bar::after {
-  top: 10px;
+  top: 11px;
+  left: 0;
+  transform-origin: right center;
 }
 
 .c-hamburger.is-open .c-hamburger__bar {
@@ -98,7 +100,12 @@ header
 
 .c-hamburger.is-open .c-hamburger__bar::before {
   transform-origin: right center;
-  transform: rotate(-360deg);
+  transform: rotate(-45deg);
+}
+
+.c-hamburger.is-open .c-hamburger__bar::after {
+  transform-origin: right center;
+  transform: rotate(45deg);
 }
 
 .c-header__nav {
@@ -144,19 +151,19 @@ main
   color: #fff;
 }
 
-.c-page-title {
+.c-section-title {
   position: relative;
   font-size: 32px;
   padding: 30px 0 30px 70px;
 }
 @media screen and (max-width: 900px) {
-  .c-page-title {
+  .c-section-title {
     font-size: 24px;
     padding: 30px 0 30px 50px;
   }
 }
 
-.c-page-title::before {
+.c-section-title::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -166,7 +173,7 @@ main
   background-color: #fff;
 }
 @media screen and (max-width: 900px) {
-  .c-page-title::before {
+  .c-section-title::before {
     width: 30px;
   }
 }
@@ -358,36 +365,36 @@ footer
   font-size: 0.9rem;
 }
 
-/*-------------------------------------------
-TOP gridレイアウト
--------------------------------------------*/
-/* ここから記述します。 */
-.p-top-main::before {
-  content: "UTSUWAYA KOHARU";
+.l-main {
+  position: relative;
+}
+
+.p-side-title {
   position: absolute;
-  top: 65%;
-  left: -5%;
+  top: 37%;
+  z-index: 3;
+  left: -70px;
   transform: rotate(-90deg);
-  font-size: 14px;
+  font-size: 15px;
   color: rgba(255, 255, 255, 0.4);
 }
 @media screen and (max-width: 900px) {
-  .p-top-main::before {
+  .p-side-title {
     display: none;
   }
 }
 
-.p-top-main::after {
+.p-side-title::before {
   content: "";
   position: absolute;
-  top: 85%;
-  left: 1.6%;
-  width: 1px;
-  height: 45px;
+  top: 50%;
+  left: -65px;
+  width: 40px;
+  height: 1px;
   background-color: rgba(255, 255, 255, 0.4);
 }
 @media screen and (max-width: 900px) {
-  .p-top-main::after {
+  .p-side-title::before {
     display: none;
   }
 }
@@ -426,9 +433,6 @@ TOP gridレイアウト
   padding: 15px 80px;
 }
 
-/*-------------------------------------------
-aboutページ / about.html
--------------------------------------------*/
 .p-about__subtitle {
   font-size: 28px;
   margin-bottom: 20px;
@@ -439,9 +443,6 @@ aboutページ / about.html
   }
 }
 
-/*-------------------------------------------
-companyページ / company.html
--------------------------------------------*/
 .c-sprit__left iframe {
   width: 100%;
   height: 100%;
@@ -470,17 +471,10 @@ companyページ / company.html
   border-bottom: none;
 }
 
-/*-------------------------------------------
-itemページ / item*.html
--------------------------------------------*/
 .p-item {
   margin-top: 30px;
 }
 
-/*-------------------------------------------
-productsページ / products.html
--------------------------------------------*/
-/* ここから記述します。 */
 .p-products--popular {
   grid-template-columns: repeat(3, 1fr);
   margin-bottom: 180px;

@@ -1,8 +1,4 @@
-/*-------------------------------------------
-productsページ / products.html
--------------------------------------------*/
 @use 'setting' as s;
-/* ここから記述します。 */
 
 .p-products--popular {
   grid-template-columns: repeat(3, 1fr);

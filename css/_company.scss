@@ -1,21 +1,9 @@
-/*-------------------------------------------
-companyページ / company.html
--------------------------------------------*/
 @use 'setting' as s;
 
 .c-sprit__left iframe {
   width: 100%;
   height: 100%;
 }
-
-// .p-company__info {
-//   display: flex;
-//   align-items: center;
-
-//   @include s.mq(tab) {
-//     aspect-ratio: auto;
-//   }
-// }
 
 .p-company__list {
   width: 100%;

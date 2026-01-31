@@ -1,16 +1,16 @@
-/*-------------------------------------------
-TOP gridレイアウト
--------------------------------------------*/
 @use 'setting' as s;
-/* ここから記述します。 */
 
-.p-top-main::before {
-  content: "UTSUWAYA KOHARU";
+.l-main {
+  position: relative;
+}
+
+.p-side-title {
   position: absolute;
-  top: 65%;
-  left: -5%;
+  top: 37%;
+  z-index: 3;
+  left: -70px;
   transform: rotate(-90deg);
-  font-size: 14px;
+  font-size: 15px;
   color: rgba(255, 255, 255, 0.4);
 
   @include s.mq(tab) {
@@ -18,52 +18,18 @@ TOP gridレイアウト
   }
 }
 
-.p-top-main::after {
+.p-side-title::before {
   content: "";
   position: absolute;
-  top: 85%;
-  left: 1.6%;
-  width: 1px;
-  height: 45px;
+  top: 50%;
+  left: -65px;
+  width: 40px;
+  height: 1px;
   background-color: rgba(255, 255, 255, 0.4);
 
   @include s.mq(tab) {
     display: none;
   }
-}
-
-.p-products::before {
-  // content: "UTSUWAYA KOHARU";
-  // position: absolute;
-  // top: 30%;
-  // left: 0%;
-  // transform: rotate(-90deg) translate(-50%, -50%);
-  // transform-origin: left bottom;
-  // font-size: 1rem;
-  // color: rgba(255, 255, 255, 0.4);
-  // letter-spacing: 1.2;
-  // white-space: nowrap;
-  // pointer-events: none;
-
-  // @include s.mq(tab) {
-  //   display: none;
-  // }
-}
-
-.p-products::after {
-  // content: "";
-  // position: absolute;
-  // top: 55%;
-  // left: -25px;
-  // transform: translate(-50%, -50%);
-  // transform-origin: left bottom;
-  // width: 1px;
-  // height: 50px;
-  // background-color: rgba(255, 255, 255, 0.4);
-
-  // @include s.mq(tab) {
-  //   display: none;
-  // }
 }
 
 .p-products__item--vertical {
